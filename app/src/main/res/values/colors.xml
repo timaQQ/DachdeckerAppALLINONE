@@ -7,4 +7,10 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="main_blue">#009FED</color>
+    <color name="button_red">#E84D15</color>
+    <color name="secondary_button_blue">#009FED</color>
+    <color name="text_grey">#8A8894</color>
+    <color name="text_black">#212121</color>
+    <color name="mtrl_textinput_default_box_stroke_color">#009FED</color>
 </resources>
