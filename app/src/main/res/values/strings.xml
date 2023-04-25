@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">DachdeckerApp ALLINONE</string>
+    <string name="myProject_title">Meine Projekte</string>
+    <string name="calculations_title">Berechnungen</string>
+    <string name="dimensions_title">Maßkatalog</string>
+    <string name="formcollection_title">Formelsammlung</string>
+    <string name="search">Suchen</string>
+    <string name="tab_title_product">Produkt</string>
+    <string name="forgot_password_login">Passwort vergessen?</string>
 </resources>

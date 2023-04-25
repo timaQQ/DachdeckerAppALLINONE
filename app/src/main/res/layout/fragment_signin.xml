@@ -1,6 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/signin_email_edittext"
+            android:layout_width="320dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="140dp"
+            android:background="@drawable/login_input"
+            android:drawablePadding="3dp"
+            android:ems="10"
+            android:hint="E-Mail"
+            android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
+            android:paddingEnd="6dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/signin_password_edittext"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login_input"
+            android:ems="10"
+            android:hint="Passwort"
+            android:inputType="textPassword"
+            android:paddingStart="15dp"
+            android:paddingEnd="6dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/signin_email_edittext"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signin_email_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/signin_name_edittext" />
+
+        <EditText
+            android:id="@+id/signin_password_edittextTwo"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/login_input"
+            android:ems="10"
+            android:paddingStart="15dp"
+            android:hint="Passwort wiederholen"
+            android:inputType="textPassword"
+            android:paddingEnd="6dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/signin_email_edittext"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/signin_email_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/signin_password_edittext" />
+
+        <EditText
+            android:id="@+id/signin_name_edittext"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/login_input"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName"
+            android:paddingStart="15dp"
+            android:paddingEnd="6dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/signin_email_edittext"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/signin_email_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/signin_email_edittext" />
+
+        <Button
+            android:id="@+id/register_button_signin"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="4dp"
+            android:backgroundTint="@color/button_red"
+            android:text="Registrieren"
+            android:focusable="true"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/signin_name_edittext"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <Button
+            android:id="@+id/cancel_button_signin"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abbrechen"
+            android:focusable="true"
+            android:textColor="@color/secondary_button_blue"
+            app:layout_constraintStart_toStartOf="@+id/signin_name_edittext"
+            app:layout_constraintTop_toTopOf="@+id/register_button_signin"
+            app:strokeColor="#FF0000"
+            app:strokeWidth="2dp"/>
+
+        <TextView
+            android:id="@+id/signin_email_hint_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Geben Sie hier Ihre E-Mail Adresse ein"
+            android:textSize="10.5dp"
+            android:textColor="@color/text_grey"
+            app:layout_constraintBottom_toTopOf="@+id/signin_email_edittext"
+            app:layout_constraintEnd_toEndOf="@+id/signin_email_edittext"
+            app:layout_constraintStart_toStartOf="@+id/signin_email_edittext" />
+
+        <TextView
+            android:id="@+id/signin_password_hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Geben Sie hier Ihr Passwort ein \n(min. 8 Zeichen)"
+            android:textSize="10.5dp"
+            android:textColor="@color/text_grey"
+            app:layout_constraintBottom_toTopOf="@+id/signin_password_edittext"
+            app:layout_constraintStart_toStartOf="@+id/signin_password_edittext" />
+
+        <TextView
+            android:id="@+id/signin_name_hint_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Geben Sie hier Ihren Namen ein"
+            android:textSize="10.5dp"
+            android:textColor="@color/text_grey"
+            app:layout_constraintBottom_toTopOf="@+id/signin_name_edittext"
+            app:layout_constraintStart_toStartOf="@+id/signin_name_edittext" />
+
+        <CheckBox
+            android:id="@+id/checkBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingStart="10dp"
+            android:text="Bitte akzeptieren Sie die \n"
+            app:layout_constraintEnd_toEndOf="@+id/signin_password_edittextTwo"
+            app:layout_constraintStart_toStartOf="@+id/signin_password_edittextTwo"
+            app:layout_constraintTop_toBottomOf="@+id/signin_password_edittextTwo" />
+
+        <TextView
+            android:id="@+id/policy_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:paddingStart="10dp"
+            android:layout_marginTop="16dp"
+            android:focusable="true"
+            android:clickable="true"
+            android:text="Datenschutzerklärung"
+            android:textColor="@color/main_blue"
+            app:layout_constraintBottom_toBottomOf="@+id/checkBox"
+            app:layout_constraintStart_toStartOf="@+id/checkBox"
+            app:layout_constraintTop_toTopOf="@+id/checkBox" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
