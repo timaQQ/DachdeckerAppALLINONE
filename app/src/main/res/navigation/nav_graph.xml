@@ -9,7 +9,14 @@
         android:id="@+id/mainFragment"
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.MainFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_calculationsFragment"
+            app:destination="@id/calculationsFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.login.LoginFragment"
@@ -24,4 +31,98 @@
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.login.SigninFragment"
         android:label="SigninFragment"
         tools:layout="@layout/fragment_signin"/>
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.projects.ProjectsFragment"
+        android:label="ProjectsFragment"
+        tools:layout="@layout/fragment_projects">
+        <action
+            android:id="@+id/action_projectsFragment_to_newprojectFragment"
+            app:destination="@id/newprojectFragment" />
+        <action
+            android:id="@+id/action_projectsFragment_to_projectFragment"
+            app:destination="@id/projectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newprojectFragment"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.projects.NewprojectFragment"
+        android:label="NewprojectFragment"
+        tools:layout="@layout/fragment_newproject">
+        <action
+            android:id="@+id/action_newprojectFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsFragment"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsFragment"
+        android:label="CalculationsFragment"
+        tools:layout="@layout/fragment_calculations">
+        <action
+            android:id="@+id/action_calculationsFragment_to_calculationsDetailFragment"
+            app:destination="@id/calculationsDetailFragment" />
+        <action
+            android:id="@+id/action_calculationsFragment_to_calculationsMaterialbedarfFlaechenziegelFragment"
+            app:destination="@id/calculationsMaterialbedarfFlaechenziegelFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsDetailFragment"
+        tools:layout="@layout/fragment_einteilung_fassade_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsFassadeEinteilungFragment"
+        android:label="CalculationsDetailFragment" />
+    <fragment
+        android:id="@+id/calculationsFassadeTab"
+        tools:layout="@layout/tab_fassade_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsFassadeTab"
+        android:label="CalculationsFassadeTab" />
+    <fragment
+        android:id="@+id/calculationsFlachdachTab"
+        tools:layout="@layout/tab_flachdach_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsFlachdachTab"
+        android:label="CalculationsFlachdachTab" />
+    <fragment
+        android:id="@+id/calculationsSteildachTab"
+        tools:layout="@layout/tab_steildach_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsSteildachTab"
+        android:label="CalculationsSteildachTab" />
+    <fragment
+        android:id="@+id/calculationsMaterialbedarfFlaechenziegelFragment"
+        tools:layout="@layout/fragment_flaechenziegel_materialbedarf_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsMaterialbedarfFlaechenziegelFragment"
+        android:label="CalculationsMaterialbedarfFlaechenziegelFragment" >
+        <action
+            android:id="@+id/action_calculationsMaterialbedarfFlaechenziegelFragment_to_calculationsUploadToprojectFragment"
+            app:destination="@id/calculationsUploadToprojectFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectFragment"
+        tools:layout="@layout/fragment_project"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.projects.ProjectFragment"
+        android:label="ProjectFragment" >
+        <argument
+            android:name="project"
+            app:argType="de.timurg.dachdeckerappallinone.domain.model.Project" />
+        <action
+            android:id="@+id/action_projectFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_projectFragment_to_projectsCalculationsFragment"
+            app:destination="@id/projectsCalculationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calculationsUploadToprojectFragment"
+        tools:layout="@layout/fragment_toproject_upload_calculations"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.calculations.CalculationsUploadToprojectFragment"
+        android:label="CalculationsUploadToprojectFragment" >
+        <argument
+            android:name="calculation"
+            app:argType="de.timurg.dachdeckerappallinone.domain.model.Calculation" />
+        <action
+            android:id="@+id/action_calculationsUploadToprojectFragment_to_calculationsFragment"
+            app:destination="@id/calculationsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/projectsCalculationsFragment"
+        tools:layout="@layout/fragment_calculations_project"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.projects.ProjectsCalculationsFragment"
+        android:label="ProjectsCalculationsFragment" />
 </navigation>

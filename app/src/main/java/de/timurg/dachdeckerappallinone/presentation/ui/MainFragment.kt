@@ -56,14 +56,18 @@ class MainFragment : Fragment() {
 
             }
             buttonMyProjects.setOnClickListener {
-                //TODO:
-                TODO()
-
+                findNavController()
+                    .navigate(
+                        MainFragmentDirections
+                            .actionMainFragmentToProjectsFragment()
+                    )
             }
             buttonCalculations.setOnClickListener {
-                //TODO:
-                TODO()
-
+                findNavController()
+                    .navigate(
+                        MainFragmentDirections
+                            .actionMainFragmentToCalculationsFragment()
+                    )
             }
             buttonDimensions.setOnClickListener {
                 //TODO:

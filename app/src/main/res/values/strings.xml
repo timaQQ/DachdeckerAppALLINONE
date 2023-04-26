@@ -7,4 +7,85 @@
     <string name="search">Suchen</string>
     <string name="tab_title_product">Produkt</string>
     <string name="forgot_password_login">Passwort vergessen?</string>
+
+    <string name="winGVK">Velux GVK Dachausstieg</string>
+    <string name="winCK04">Velux CK04</string>
+    <string name="winCK06">Velux CK06</string>
+    <string name="winFK06">Velux FK06</string>
+    <string name="winFK08">Velux FK08</string>
+    <string name="winMK06">Velux MK06</string>
+    <string name="winMK08">Velux MK08</string>
+    <string name="winMK10">Velux MK10</string>
+    <string name="winPK06">Velux PK06</string>
+    <string name="winPK08">Velux PK08</string>
+    <string name="winPK10">Velux PK10</string>
+    <string name="winSK06">Velux SK06</string>
+    <string name="winSK08">Velux SK08</string>
+    <string name="winSK10">Velux SK10</string>
+    <string name="winUK08">Velux UK08</string>
+
+    <string name="braasProductR9">Rubin 9V</string>
+    <string name="braasProductR13">Rubin 13V</string>
+    <string name="braasProductA12">Achat 12V</string>
+    <string name="braasProductO">Opal</string>
+    <string name="braasProductFP">Frankfurter Pfanne</string>
+    <string name="braasProductDSP">Doppel S Pfanne</string>
+    <string name="braasProductHP">Harzer Pfanne</string>
+    <string name="creatonProductTi">Titania</string>
+    <string name="creatonProductFu">Futura</string>
+    <string name="creatonProductMa">Magnum</string>
+    <string name="creatonProductPr">Premion</string>
+    <string name="creatonProductMZ3">MZ3</string>
+
+    <!--    <string name=""></string>-->
+
+
+    <string-array name="calculations_fassade_dropdown">
+        <item>Einteilungen</item>
+        <item>Materialbedarf</item>
+        <item>Dachgeometrie</item>
+    </string-array>
+
+    <string-array name="calculations_material_flaechenziegel_manufacturer_dropdown">
+        <item>Braas</item>
+        <item>Creaton</item>
+    </string-array>
+
+    <string-array name="calculations_material_flaechenziegel_product_braas_dropdown">
+        <item>Rubin 9V</item>
+        <item>Rubin 13V</item>
+        <item>Achat 12V</item>
+        <item>Opal</item>
+        <item>Frankfurter Pfanne</item>
+        <item>Doppel S Pfanne</item>
+        <item>Harzer Pfanne</item>
+    </string-array>
+
+    <string-array name="calculations_material_flaechenziegel_product_creaton_dropdown">
+        <item>Titania</item>
+        <item>Futura</item>
+        <item>Magnum</item>
+        <item>Premion</item>
+        <item>MZ3</item>
+    </string-array>
+
+    <string-array name="calculations_material_flaechenziegel_windows_dropdown">
+        <item>Velux GVK Dachausstieg</item>
+        <item>Velux CK04</item>
+        <item>Velux CK06</item>
+        <item>Velux FK06</item>
+        <item>Velux FK08</item>
+        <item>Velux MK06</item>
+        <item>Velux MK08</item>
+        <item>Velux MK10</item>
+        <item>Velux PK06</item>
+        <item>Velux PK08</item>
+        <item>Velux PK10</item>
+        <item>Velux SK06</item>
+        <item>Velux SK08</item>
+        <item>Velux SK10</item>
+        <item>Velux UK08</item>
+    </string-array>
+
+
 </resources>
