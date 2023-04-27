@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.appbar.MaterialToolbar
@@ -15,6 +16,7 @@ import de.timurg.dachdeckerappallinone.databinding.FragmentDimensionsCollectionB
 import de.timurg.dachdeckerappallinone.domain.model.ProductItem
 import de.timurg.dachdeckerappallinone.presentation.adapter.dimensions.Tab
 import de.timurg.dachdeckerappallinone.presentation.adapter.dimensions.VpAdapterDimensions
+import de.timurg.dachdeckerappallinone.presentation.ui.MainViewModel
 
 class DimensionsCollectionFragment : Fragment() {
 
@@ -25,6 +27,8 @@ class DimensionsCollectionFragment : Fragment() {
     private var _binding: FragmentDimensionsCollectionBinding? = null
     private val binding: FragmentDimensionsCollectionBinding
         get() = _binding ?: throw RuntimeException("FragmentDimensionsCollectionBinding == null")
+    private val viewModel: MainViewModel by activityViewModels()
+
 
     private lateinit var pager: ViewPager2
     private lateinit var tab: TabLayout

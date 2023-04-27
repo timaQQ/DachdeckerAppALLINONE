@@ -5,17 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import de.timurg.dachdeckerappallinone.databinding.TabCreatonDimensionsBinding
 import de.timurg.dachdeckerappallinone.presentation.adapter.dimensions.RvProductAdapter
-import de.timurg.dachdeckerappallinone.presentation.ui.DimensionsViewModel
+import de.timurg.dachdeckerappallinone.presentation.ui.MainViewModel
 
 class DimensionsCreatonTab : Fragment() {
 
     private var _binding: TabCreatonDimensionsBinding? = null
     private val binding: TabCreatonDimensionsBinding
         get() = _binding ?: throw RuntimeException("TabCreatonDimensionsBinding == null")
-    private val viewModel: DimensionsViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,

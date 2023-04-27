@@ -18,7 +18,7 @@ class CalculationsUploadToprojectFragment: Fragment() {
         get() = _binding ?: throw RuntimeException(
             "FragmentToprojectUploadCalculationsBinding == null"
         )
-    private val viewmodel: MainViewModel by activityViewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,11 +32,14 @@ class CalculationsUploadToprojectFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewmodel.getProjects()
-        val calculation = requireArguments().getParcelable<Calculation>("calculation")
+        with(viewModel) {
+            getProjects()
+            val calculation = requireArguments().getParcelable<Calculation>("calculation")
 
-        viewmodel.projectsList.observe(viewLifecycleOwner){
-            binding.projectsURecycler.adapter = RvCUploadToprojectAdapter(requireContext(), it, viewmodel, calculation!!)
+            projectsList.observe(viewLifecycleOwner) {
+                binding.projectsURecycler.adapter =
+                    RvCUploadToprojectAdapter(requireContext(), it, viewModel, calculation!!)
+            }
         }
 
         with(binding){

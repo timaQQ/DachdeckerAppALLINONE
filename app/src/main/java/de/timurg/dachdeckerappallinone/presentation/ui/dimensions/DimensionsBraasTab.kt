@@ -5,19 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.RecyclerView
 import de.timurg.dachdeckerappallinone.databinding.TabBraasDimensionsBinding
 import de.timurg.dachdeckerappallinone.domain.model.ProductItem
 import de.timurg.dachdeckerappallinone.presentation.adapter.dimensions.RvProductAdapter
-import de.timurg.dachdeckerappallinone.presentation.ui.DimensionsViewModel
+import de.timurg.dachdeckerappallinone.presentation.ui.MainViewModel
 
 class DimensionsBraasTab() : Fragment(), DimensionsCollectionFragment.SearchResultListener {
 
     private var _binding: TabBraasDimensionsBinding? = null
     private val binding: TabBraasDimensionsBinding
         get() = _binding ?: throw RuntimeException("TabBraasDimensionsBinding == null")
-    private val viewModel: DimensionsViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: RvProductAdapter
 

@@ -82,7 +82,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     _toast.value = "Willkommen zurück, ${user.value?.name} !"
                     _toast.value = null
                 } else {
-                    Log.e(ContentValues.TAG, "Failed to login: ${it.exception?.message}")
+                    Log.e(TAG, "Failed to login: ${it.exception?.message}")
                     _toast.value = it.exception?.message
                     _toast.value = null
                 }
@@ -100,13 +100,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                             _toast.value = "Willkommen ${user.name}"
                             _toast.value = null
                         } else {
-                            Log.e(ContentValues.TAG, "Failed to login: ${it.exception?.message}")
+                            Log.e(TAG, "Failed to login: ${it.exception?.message}")
                             _toast.value = it.exception?.message
                             _toast.value = null
                         }
                     }
                 } else {
-                    Log.e(ContentValues.TAG, "Failed to signin: ${it.exception?.message}")
+                    Log.e(TAG, "Failed to signin: ${it.exception?.message}")
                     _toast.value = it.exception?.message
                     _toast.value = null
                 }
@@ -177,6 +177,25 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
     }
 
+//    fun getCalculationsFromProject(project: Project){
+//        db.collection("user").document(currentUser.value!!.uid).collection("projects")
+//            .document(project.id).collection("calculations")
+//            .get().addOnSuccessListener {
+//                var cList = mutableListOf<Calculation>()
+//                for (documentSnapshot in it.documents){
+//                    val cal = documentSnapshot.toObject(Calculation::class.java)
+//                    if (cal != null){
+//                        cList.add(cal)
+//                    }
+//                }
+//                _calculationsListFP.value = cList
+//            }.addOnFailureListener {
+//                Log.e(TAG, "Failed to get calculation data from project: $it")
+//            }
+//
+//
+//    }
+
     fun uploadImage(uri: Uri, projectTitle: String) {
         val imageRef = storageRef.child(
             "images/${currentUser.value?.uid}/projects/${
@@ -202,3 +221,5 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
 }
+
+enum class ApiStatus { LOADING, ERROR, DONE }

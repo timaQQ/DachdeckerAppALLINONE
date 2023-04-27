@@ -6,14 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import coil.load
 import com.google.android.material.appbar.MaterialToolbar
 import de.timurg.dachdeckerappallinone.R
 import de.timurg.dachdeckerappallinone.databinding.ProductDimensionsBinding
 import de.timurg.dachdeckerappallinone.domain.model.ProductItem
-import de.timurg.dachdeckerappallinone.presentation.ui.DimensionsViewModel
+import de.timurg.dachdeckerappallinone.presentation.ui.MainViewModel
 
 class DimensionsProduct : Fragment() {
 
@@ -21,7 +21,7 @@ class DimensionsProduct : Fragment() {
     private val binding: ProductDimensionsBinding
         get() = _binding ?: throw RuntimeException("ProductDimensionsBinding == null")
 
-    private val viewModel: DimensionsViewModel by viewModels()
+    private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var toolbar: MaterialToolbar
     private lateinit var productImage: ImageView

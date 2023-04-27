@@ -8,7 +8,7 @@ import de.timurg.dachdeckerappallinone.data.ProductsData
 import de.timurg.dachdeckerappallinone.data.remote.ProductApi
 import kotlinx.coroutines.launch
 
-enum class ApiStatus { LOADING, ERROR, DONE }
+
 
 class DimensionsViewModel : ViewModel() {
 
