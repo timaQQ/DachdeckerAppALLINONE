@@ -6,6 +6,7 @@
     <string name="formcollection_title">Formelsammlung</string>
     <string name="search">Suchen</string>
     <string name="tab_title_product">Produkt</string>
+    <string name="tab_title_manufacturer">Hersteller</string>
     <string name="forgot_password_login">Passwort vergessen?</string>
 
     <string name="winGVK">Velux GVK Dachausstieg</string>
