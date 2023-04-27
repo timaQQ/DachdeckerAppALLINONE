@@ -31,16 +31,18 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.currentUser.observe(viewLifecycleOwner) {
-            if (it == null) {
-                findNavController().navigate(R.id.loginFragment)
-            } else {
-                viewModel.getUserData()
+        with(viewModel) {
+            currentUser.observe(viewLifecycleOwner) {
+                if (it == null) {
+                    findNavController().navigate(R.id.loginFragment)
+                } else {
+                    viewModel.getUserData()
+                }
             }
-        }
-        viewModel.user.observe(viewLifecycleOwner) {
-            if (it != null) {
-                binding.tvWelcomeMain.text = "Wilkommen ${it.name}"
+            user.observe(viewLifecycleOwner) {
+                if (it != null) {
+                    binding.tvWelcomeMain.text = "Willkommen ${it.name}"
+                }
             }
         }
 
@@ -70,9 +72,11 @@ class MainFragment : Fragment() {
                     )
             }
             buttonDimensions.setOnClickListener {
-                //TODO:
-                TODO()
-
+                findNavController()
+                    .navigate(
+                        MainFragmentDirections
+                            .actionMainFragmentToDimensionsCollectionFragment()
+                    )
             }
         }
 

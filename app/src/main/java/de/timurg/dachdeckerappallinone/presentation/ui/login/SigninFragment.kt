@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
@@ -83,6 +84,20 @@ class SigninFragment : Fragment() {
 
         }
 
+        with(viewModel) {
+            currentUser.observe(viewLifecycleOwner) {
+                if (it != null) {
+                    findNavController().navigate(R.id.mainFragment)
+                }
+            }
+
+            toast.observe(viewLifecycleOwner) {
+                if (it != null) {
+                    Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
 
         mailEmpty.observe(viewLifecycleOwner) {
             checkButtonDisabled(
@@ -151,11 +166,7 @@ class SigninFragment : Fragment() {
             }
         }
 
-        viewModel.currentUser.observe(viewLifecycleOwner) {
-            if (it != null) {
-                findNavController().navigate(R.id.mainFragment)
-            }
-        }
+
 
     }
 

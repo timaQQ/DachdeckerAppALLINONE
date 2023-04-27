@@ -96,7 +96,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     firebaseAuth.signInWithEmailAndPassword(email, key).addOnCompleteListener {
                         if (it.isSuccessful) {
                             _currentUser.value = firebaseAuth.currentUser
-//                            setName(user)
+                            setName(user)
                             _toast.value = "Willkommen ${user.name}"
                             _toast.value = null
                         } else {

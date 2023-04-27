@@ -60,21 +60,8 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
         viewModel.loadProductsApi()
 
         with(binding) {
-            tilCWindowsL.isGone = true
-            tilCWindowsW.isGone = true
-            ivProduct.isGone = true
-            actvDropdownProduct.isGone = true
-            tilDropdownProduct.isGone = true
-            tilRLength.isGone = true
-            tilRWidth.isGone = true
-            actvDropdownWindows.isGone = true
-            tilDropdownWindows.isGone = true
-            tilNWindows.isGone = true
-            tvResult.isGone = true
-            tvReminder.isVisible = true
-            fabAddCalulationToProject.isGone = true
-            switchRWrLDouble.isGone = true
-            tvResultHint.isGone = true
+
+            funOne()
             flaechentiegelToolbar.setNavigationOnClickListener {
                 findNavController().navigateUp()
             }
@@ -87,18 +74,7 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
             actvDropdownManufacturer.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, _, position, _ ->
                     val selectedManufacturer = dropdownArrayManufacturer[position]
-                    actvDropdownProduct.setText("")
-                    actvDropdownProduct.isEnabled = true
-                    actvDropdownProduct.isGone = false
-                    tilDropdownProduct.isGone = false
-                    tilRLength.isGone = true
-                    tilRWidth.isGone = true
-                    actvDropdownWindows.isGone = true
-                    tilDropdownWindows.isGone = true
-                    tilNWindows.isGone = true
-                    tvResult.isGone = true
-                    tvResultHint.isGone = true
-                    tvReminder.text = "Bitte wähle ein Produkt"
+                    funTwo()
 
                     val productsArrayAdapter = when (selectedManufacturer) {
                         "Braas" -> ArrayAdapter(
@@ -149,20 +125,9 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
                                 else -> throw IllegalStateException("Unknown Product")
 
                             }
-                            ivProduct.isVisible = true
-                            ivProduct.load(productImage) {
-                                placeholder(R.drawable.ic_round_image)
-                                error(R.drawable.ic_round_image_not_supported)
+                            if (productImage != null) {
+                                funThree(productImage)
                             }
-
-                            tilRLength.isGone = false
-                            tilRWidth.isGone = false
-                            switchRWrLDouble.isGone = false
-                            actvDropdownWindows.isGone = false
-                            tilDropdownWindows.isGone = false
-                            tilNWindows.isGone = false
-                            tvResult.isGone = false
-                            tvReminder.isVisible = false
 
                         }
                 }
@@ -266,6 +231,62 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
             ((length * width) - (wModel * wn))
         }
         return tempResult
+    }
+
+    private fun funOne() {
+        with(binding) {
+            tilCWindowsL.isGone = true
+            tilCWindowsW.isGone = true
+            ivProduct.isGone = true
+            actvDropdownProduct.isGone = true
+            tilDropdownProduct.isGone = true
+            tilRLength.isGone = true
+            tilRWidth.isGone = true
+            actvDropdownWindows.isGone = true
+            tilDropdownWindows.isGone = true
+            tilNWindows.isGone = true
+            tvResult.isGone = true
+            tvReminder.isVisible = true
+            fabAddCalulationToProject.isGone = true
+            switchRWrLDouble.isGone = true
+            tvResultHint.isGone = true
+        }
+    }
+    private fun funTwo() {
+        with(binding) {
+            actvDropdownProduct.setText("")
+            actvDropdownProduct.isEnabled = true
+            actvDropdownProduct.isGone = false
+            tilDropdownProduct.isGone = false
+            tilRLength.isGone = true
+            tilRWidth.isGone = true
+            actvDropdownWindows.isGone = true
+            tilDropdownWindows.isGone = true
+            tilNWindows.isGone = true
+            tvResult.isGone = true
+            tvResultHint.isGone = true
+            tvReminder.isVisible = true
+            switchRWrLDouble.isGone = true
+            tvReminder.text = "Bitte wähle ein Produkt"
+        }
+    }
+    private fun funThree(pI: String) {
+        with(binding) {
+            ivProduct.isVisible = true
+            ivProduct.load(pI) {
+                placeholder(R.drawable.ic_round_image)
+                error(R.drawable.ic_round_image_not_supported)
+            }
+
+            tilRLength.isGone = false
+            tilRWidth.isGone = false
+            switchRWrLDouble.isGone = false
+            actvDropdownWindows.isGone = false
+            tilDropdownWindows.isGone = false
+            tilNWindows.isGone = false
+            tvResult.isGone = false
+            tvReminder.isVisible = false
+        }
     }
 
     override fun onDestroyView() {
