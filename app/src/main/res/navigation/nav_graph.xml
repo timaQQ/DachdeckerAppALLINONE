@@ -17,6 +17,9 @@
             android:id="@+id/action_mainFragment_to_calculationsFragment"
             app:destination="@id/calculationsFragment" />
         <action
+            android:id="@+id/action_mainFragment_to_formCollectionFragment"
+            app:destination="@id/formCollectionFragment" />
+        <action
             android:id="@+id/action_mainFragment_to_projectsFragment"
             app:destination="@id/projectsFragment" />
     </fragment>
@@ -77,6 +80,15 @@
             app:destination="@id/dimensionsProduct" />
     </fragment>
     <fragment
+        android:id="@+id/formCollectionFragment"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.formcollection.FormCollectionFragment"
+        android:label="FormCollectionFragment"
+        tools:layout="@layout/fragment_form_collection">
+        <action
+            android:id="@+id/action_formCollectionFragment_to_formCollectionItem"
+            app:destination="@id/formCollectionItem" />
+    </fragment>
+    <fragment
         android:id="@+id/dimensionsProduct"
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.dimensions.DimensionsProduct"
         android:label="DimensionsProduct"
@@ -90,6 +102,20 @@
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.dimensions.DimensionsBraasTab"
         android:label="DimensionsBraasTab"
         tools:layout="@layout/tab_braas_dimensions"/>
+    <fragment
+        android:id="@+id/formCollectionFlaechenTab"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.formcollection.FormCollectionFlaechenTab"
+        android:label="FormCollectionFlaechenTab"
+        tools:layout="@layout/tab_flaechen_formcollection"/>
+    <fragment
+        android:id="@+id/formCollectionItem"
+        android:name="de.timurg.dachdeckerappallinone.presentation.ui.formcollection.FormCollectionItem"
+        android:label="FormCollectionItem"
+        tools:layout="@layout/item_formcollection">
+        <argument
+            android:name="item"
+            app:argType="de.timurg.dachdeckerappallinone.domain.model.FFlaechenItem" />
+    </fragment>
     <fragment
         android:id="@+id/dimensionsCreatonTab"
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.dimensions.DimensionsCreatonTab"
@@ -157,4 +183,3 @@
         android:name="de.timurg.dachdeckerappallinone.presentation.ui.projects.ProjectsCalculationsFragment"
         android:label="ProjectsCalculationsFragment" />
 </navigation>
-
