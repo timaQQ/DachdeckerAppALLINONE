@@ -59,6 +59,12 @@ class LoginFragment : Fragment() {
                 }
             }
 
+            loginwGoogleButton.setOnClickListener {
+
+                TODO("Future feature")
+
+            }
+
             registerButtonSignin.setOnClickListener {
                 findNavController().navigate(R.id.signinFragment)
             }

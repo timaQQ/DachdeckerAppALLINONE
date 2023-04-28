@@ -61,7 +61,8 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
 
         with(binding) {
 
-            funOne()
+            showManufacturer()
+
             flaechentiegelToolbar.setNavigationOnClickListener {
                 findNavController().navigateUp()
             }
@@ -74,7 +75,8 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
             actvDropdownManufacturer.onItemClickListener =
                 AdapterView.OnItemClickListener { parent, _, position, _ ->
                     val selectedManufacturer = dropdownArrayManufacturer[position]
-                    funTwo()
+
+                    showProducts()
 
                     val productsArrayAdapter = when (selectedManufacturer) {
                         "Braas" -> ArrayAdapter(
@@ -126,7 +128,7 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
 
                             }
                             if (productImage != null) {
-                                funThree(productImage)
+                                showScreen(productImage)
                             }
 
                         }
@@ -233,7 +235,7 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
         return tempResult
     }
 
-    private fun funOne() {
+    private fun showManufacturer() {
         with(binding) {
             tilCWindowsL.isGone = true
             tilCWindowsW.isGone = true
@@ -252,7 +254,7 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
             tvResultHint.isGone = true
         }
     }
-    private fun funTwo() {
+    private fun showProducts() {
         with(binding) {
             actvDropdownProduct.setText("")
             actvDropdownProduct.isEnabled = true
@@ -270,7 +272,7 @@ class CalculationsMaterialbedarfFlaechenziegelFragment : Fragment() {
             tvReminder.text = "Bitte wähle ein Produkt"
         }
     }
-    private fun funThree(pI: String) {
+    private fun showScreen(pI: String) {
         with(binding) {
             ivProduct.isVisible = true
             ivProduct.load(pI) {

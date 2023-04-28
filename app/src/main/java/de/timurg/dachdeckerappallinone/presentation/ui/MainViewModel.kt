@@ -177,7 +177,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Failed to upload calculation: $it")
             }
     }
-
+//TODO: Future
+    
 //    fun getCalculationsFromProject(project: Project){
 //        db.collection("user").document(currentUser.value!!.uid).collection("projects")
 //            .document(project.id).collection("calculations")
