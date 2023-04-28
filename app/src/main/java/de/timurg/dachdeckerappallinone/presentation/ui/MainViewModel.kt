@@ -79,6 +79,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             .addOnCompleteListener {
                 if (it.isSuccessful) {
                     _currentUser.value = firebaseAuth.currentUser
+                    getUserData()
                     _toast.value = "Willkommen zurück, ${user.value?.name} !"
                     _toast.value = null
                 } else {
