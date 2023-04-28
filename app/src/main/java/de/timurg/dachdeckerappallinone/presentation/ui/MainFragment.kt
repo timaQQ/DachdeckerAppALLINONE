@@ -53,9 +53,11 @@ class MainFragment : Fragment() {
             }
 
             buttonFormcollection.setOnClickListener {
-                //TODO:
-                TODO()
-
+                findNavController()
+                    .navigate(
+                        MainFragmentDirections
+                            .actionMainFragmentToFormCollectionFragment()
+                    )
             }
             buttonMyProjects.setOnClickListener {
                 findNavController()
