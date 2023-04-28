@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="redf">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/menu_item_add_appointment"
+                    android:icon="@drawable/ic_round_filter"
+                    android:title="fdsbg" />
+                <item
+                    android:id="@+id/menu_add_pet"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="dsfhgdrt" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="erdffwe">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/menu_item_food"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="erergfds" />
+                <item
+                    android:id="@+id/menu_item_medicine"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="sdgedrg" />
+                <item
+                    android:id="@+id/menu_item_healthdata"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="Gesundheitsdaten" />
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="werqasdgf">
+        <menu>
+            <group android:checkableBehavior="none">
+                <item
+                    android:id="@+id/menu_item_profile_settings"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="dtzjhth" />
+                <item
+                    android:id="@+id/menu_item_general_settings"
+                    android:icon="@drawable/ic_round_hamburger"
+                    android:title="tdejzhfgfg" />
+            </group>
+        </menu>
+    </item>
+</menu>
